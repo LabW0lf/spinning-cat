@@ -1,0 +1,37 @@
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#pot {
+    position: absolute;
+    left: -100px;                   /* Start slightly outside the left side */
+    animation: slide-right 6s linear infinite;
+}
+
+@keyframes slide-right {
+    0% {
+        left: -100px;                 /* Start outside the screen on the left */
+        visibility: hidden;           /* Hidden at the start */
+    }
+    5% {
+        visibility: visible;          /* Becomes visible slightly after starting */
+    }
+    95% {
+        visibility: visible;          /* Remains visible until just before the end */
+    }
+    100% {
+        left: calc(100vw);    /* End outside the screen on the right */
+        visibility: hidden;           /* Hidden at the end */
+    }
+}
+
+
+
